@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".AddItemActivity">
+
+    <EditText
+        android:id="@+id/album_new_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/album_new"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.155"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/artist_new_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/artist_new"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.562"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.048"
+        tools:ignore="MissingConstraints"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/year_new_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/year_new"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        app:layout_constraintVertical_bias="0.263"
+        android:autofillHints="2020" />
+
+    <EditText
+        android:id="@+id/description_new_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="desc"
+        android:hint="@string/description_new"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.361" />
+
+    <Button
+        android:id="@+id/add_button"
+        android:layout_width="151dp"
+        android:layout_height="38dp"
+        android:text="@string/add_new"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.988"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        app:layout_constraintVertical_bias="0.477"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

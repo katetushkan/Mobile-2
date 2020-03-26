@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".SettingsActivity">
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:enabled="true"
+        android:text="@string/text_size"
+        android:textColor="@color/colorAccent"
+        android:visibility="visible"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="176dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        style="@style/Widget.AppCompat.SeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="101dp"
+        android:labelFor="@id/textView"
+        android:max="10"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="73dp"
+        tools:layout_editor_absoluteY="50dp" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        style="@style/Widget.AppCompat.Spinner.DropDown"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center|clip_vertical"
+        android:isScrollContainer="false"
+        android:spinnerMode="dialog"
+         />
+
+    <Button
+        android:id="@+id/language"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/english"
+        android:textColor="@color/colorAccent"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        />
+</LinearLayout>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="100">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/image"
+        android:layout_width="168dp"
+        android:layout_height="129dp"
+        android:layout_margin="10dp"
+        android:layout_weight="20">
+
+    </androidx.appcompat.widget.AppCompatImageView>
+
+    <TextView
+        android:id="@+id/albumNameIndivid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="#000"
+        android:layout_marginStart="20dp"
+        android:text="Title Album"
+        android:textSize="17sp"
+        />
+
+    <TextView
+        android:id="@+id/artistNameIndivid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="#000"
+        android:layout_marginStart="20dp"
+        android:text="Title Album"
+        android:textSize="17sp"
+        />
+
+    <TextView
+        android:id="@+id/yearIndivid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="#000"
+        android:layout_marginStart="20dp"
+        android:text="Title Album"
+        android:textSize="17sp"
+        />
+
+    <TextView
+        android:id="@+id/image_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="3"
+        android:text="Description"
+        android:textSize="17sp"
+
+        />
+
+    <FrameLayout
+        android:layout_width="349dp"
+        android:layout_height="200dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp">
+
+        <VideoView
+            android:id="@+id/video"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+
+</LinearLayout>

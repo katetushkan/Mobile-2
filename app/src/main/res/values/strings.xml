@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">MusicApp</string>
+    <string name="settings">settings</string>
+    <string name="text_size">Text size:</string>
+    <string name="english">english</string>
+    <string name="artist_new">Artist name</string>
+    <string name="album_new">Album name</string>
+    <string name="year_new">Year</string>
+    <string name="description_new">Description</string>
+    <string name="add_new">Add new item</string>
+    <string-array name="fonts">
+        <item>boomboom</item>
+        <item>beer_money</item>
+        <item>gnyrwn</item>
+        <item>christmas_script</item>
+        <item>lobster</item>
+    </string-array>
+</resources>
+
