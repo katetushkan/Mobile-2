@@ -12,16 +12,16 @@
         "source": "/Users/katerinatushinskaya/Desktop/1untitled/Lab2/app/src/main/res/layout/layout_listitem.xml"
     },
     {
-        "merged": "/Users/katerinatushinskaya/Desktop/1untitled/Lab2/app/build/intermediates/res/merged/debug/layout_activity_individual.xml.flat",
-        "source": "/Users/katerinatushinskaya/Desktop/1untitled/Lab2/app/src/main/res/layout/activity_individual.xml"
+        "merged": "/Users/katerinatushinskaya/Desktop/1untitled/Lab2/app/build/intermediates/res/merged/debug/menu_settings_menu.xml.flat",
+        "source": "/Users/katerinatushinskaya/Desktop/1untitled/Lab2/app/src/main/res/menu/settings_menu.xml"
     },
     {
         "merged": "/Users/katerinatushinskaya/Desktop/1untitled/Lab2/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_close.xml.flat",
         "source": "/Users/katerinatushinskaya/Desktop/1untitled/Lab2/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_close.xml"
     },
     {
-        "merged": "/Users/katerinatushinskaya/Desktop/1untitled/Lab2/app/build/intermediates/res/merged/debug/menu_settings_menu.xml.flat",
-        "source": "/Users/katerinatushinskaya/Desktop/1untitled/Lab2/app/src/main/res/menu/settings_menu.xml"
+        "merged": "/Users/katerinatushinskaya/Desktop/1untitled/Lab2/app/build/intermediates/res/merged/debug/layout_activity_individual.xml.flat",
+        "source": "/Users/katerinatushinskaya/Desktop/1untitled/Lab2/app/src/main/res/layout/activity_individual.xml"
     },
     {
         "merged": "/Users/katerinatushinskaya/Desktop/1untitled/Lab2/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_launcher.xml.flat",

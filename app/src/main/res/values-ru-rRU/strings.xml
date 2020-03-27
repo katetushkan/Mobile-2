@@ -9,4 +9,6 @@
     <string name="artist_new">Имя Артиста</string>
     <string name="year_new">Год</string>
     <string name="description_new">Описание</string>
+    <string name="choose_video">Выбрать</string>
+    <string name="ch_video">Файл не выбран</string>
 </resources>

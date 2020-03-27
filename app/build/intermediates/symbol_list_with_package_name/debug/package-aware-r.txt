@@ -1211,6 +1211,7 @@ id center_vertical
 id chains
 id checkbox
 id checked
+id choose
 id chronometer
 id clip_horizontal
 id clip_vertical
@@ -1286,6 +1287,7 @@ id navigation_header_container
 id never
 id none
 id normal
+id notification
 id notification_background
 id notification_main_column
 id notification_main_column_container
@@ -1531,8 +1533,10 @@ string app_name
 string appbar_scrolling_view_behavior
 string artist_new
 string bottom_sheet_behavior
+string ch_video
 string character_counter_content_description
 string character_counter_pattern
+string choose_video
 string common_google_play_services_enable_button
 string common_google_play_services_enable_text
 string common_google_play_services_enable_title

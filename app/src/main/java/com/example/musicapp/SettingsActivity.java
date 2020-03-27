@@ -39,6 +39,7 @@ public class SettingsActivity extends AppCompatActivity {
         Integer fontId = 2131296257;
         Resources res = getResources();
         String[] fonts = res.getStringArray(R.array.fonts);
+        final Intent intent = new Intent();
 
         if (spinner != null){
             ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, fonts);
@@ -55,11 +56,13 @@ public class SettingsActivity extends AppCompatActivity {
                     language[0] = 1;
                     changeLanguage.setText("русский");
                     setSize.setText("Размер шрифта");
+                    intent.putExtra("lan", language);
 //                    settings.setTitle("настройки");
                 } else {
                     language[0] = 0;
                     changeLanguage.setText("English");
                     setSize.setText("Text size:");
+                    intent.putExtra("lan", language);
 //                    settings.setTitle("settings");
                 }
             }

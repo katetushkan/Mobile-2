@@ -8,6 +8,8 @@
     <string name="year_new">Year</string>
     <string name="description_new">Description</string>
     <string name="add_new">Add new item</string>
+    <string name="choose_video">Choose</string>
+    <string name="ch_video">No file selected</string>
     <string-array name="fonts">
         <item>boomboom</item>
         <item>beer_money</item>

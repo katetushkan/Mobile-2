@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 
 import android.util.Log;
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
     int language = 5;
     int textSize = 16;
+
     //Variables
     private List<musicItem> exampleList = new ArrayList<>();
     private RecyclerViewAdapter adapter;
