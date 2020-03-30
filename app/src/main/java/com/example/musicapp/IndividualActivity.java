@@ -1,30 +1,23 @@
 package com.example.musicapp;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.webkit.WebChromeClient;
-import android.webkit.WebView;
+
 import android.widget.ImageView;
 import android.widget.MediaController;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.VideoView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
 
 import com.bumptech.glide.Glide;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-
-import java.io.File;
-import java.io.IOException;
 
 
 public class IndividualActivity extends AppCompatActivity {
@@ -33,6 +26,11 @@ public class IndividualActivity extends AppCompatActivity {
     StorageReference videoRef = storageRef.child("video/");
 
     private static final String TAG = "IndividualActivity";
+    private Integer textSize;
+    private Integer language;
+    private Integer fontId;
+    private Typeface typeface;
+
 
 
     @Override
@@ -55,6 +53,10 @@ public class IndividualActivity extends AppCompatActivity {
             String year = getIntent().getStringExtra("year");
             String descrip = getIntent().getStringExtra("description");
             String trailer = getIntent().getStringExtra("trailer");
+            textSize = getIntent().getIntExtra("textSize", 16);
+            language = getIntent().getIntExtra("lan", 0);
+            fontId = getIntent().getIntExtra("fontId", 1);
+
 
 
             setImage(imageUrl, albumName, artistName, year, descrip, trailer);
@@ -70,15 +72,19 @@ public class IndividualActivity extends AppCompatActivity {
 
         TextView name = findViewById(R.id.albumNameIndivid);
         name.setText(imageName);
+        name.setTextSize(textSize.floatValue());
 
         TextView artist = findViewById(R.id.artistNameIndivid);
         artist.setText(artistName);
+        artist.setTextSize(textSize.floatValue());
 
         TextView yearText = findViewById(R.id.yearIndivid);
         yearText.setText(year);
+        yearText.setTextSize(textSize.floatValue());
 
         TextView description = findViewById(R.id.image_description);
         description.setText(descrip);
+        description.setTextSize(textSize.floatValue());
 
         ImageView image = findViewById(R.id.image);
         Glide.with(this)

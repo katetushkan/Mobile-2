@@ -2,6 +2,7 @@ package com.example.musicapp;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -28,11 +30,15 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private List<musicItem> mExampleList;
     private List<musicItem> exampleListFull;
     private Context mContext;
+    private Integer textSize, language, fontId;
 
-    public RecyclerViewAdapter(Context Context, List<musicItem> ExampleList) {
+    public RecyclerViewAdapter(Context Context, List<musicItem> ExampleList, Integer textSize, Integer language, Integer fontId) {
         this.mExampleList = ExampleList;
         exampleListFull = new ArrayList<>(mExampleList);
         this.mContext = Context;
+        this.textSize = textSize;
+        this.language = language;
+        this.fontId = fontId;
     }
 
     @NonNull
@@ -57,11 +63,18 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 Log.d(TAG, "onClick: click on : " + mExampleList.get(position).getArtistName());
                 Toast.makeText(mContext, mExampleList.get(position).getArtistName(), Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(mContext, IndividualActivity.class);
+                intent.putExtra("lan",language);
+                intent.putExtra("textSize", textSize);
+                intent.putExtra("fontId", fontId);
                 intent.putExtra("image_url", mExampleList.get(position).getImageUrl());
                 intent.putExtra("year", mExampleList.get(position).getYear());
                 intent.putExtra("albumName", mExampleList.get(position).getAlbumName());
                 intent.putExtra("artistName", mExampleList.get(position).getArtistName());
-                intent.putExtra("description", mExampleList.get(position).getDescription());
+                if(language == 0){
+                    intent.putExtra("description", mExampleList.get(position).getDescription());
+                }else{
+                    intent.putExtra("description", mExampleList.get(position).getDescriptionRus());
+                }
                 intent.putExtra("trailer", mExampleList.get(position).getTrailer());
                 mContext.startActivity(intent);
 
@@ -81,15 +94,19 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         TextView albumName;
         TextView year;
         TextView artistName;
-
         RelativeLayout parentLayout;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             image = itemView.findViewById(R.id.image);
             albumName = itemView.findViewById(R.id.albumsName);
+
+            albumName.setTextSize(textSize.floatValue());
             year = itemView.findViewById(R.id.year);
+            year.setTextSize(textSize.floatValue());
             artistName = itemView.findViewById(R.id.artistName);
+            artistName.setTextSize(textSize.floatValue());
             parentLayout = itemView.findViewById(R.id.parent_layout);
+
         }
     }
 

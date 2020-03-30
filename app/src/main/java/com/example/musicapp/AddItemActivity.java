@@ -15,17 +15,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.HorizontalScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
+
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
@@ -40,12 +37,14 @@ public class AddItemActivity extends AppCompatActivity {
     private EditText albumName;
     private EditText year;
     private EditText description;
+    private EditText descriptionRus;
     private Button add;
     Uri videoUri;
     private String newArtist;
     private String newAlbum;
     private String newYear ;
     private String newDescription;
+    private String newDescriptionRus;
     private ProgressDialog progressDialog;
     private TextView notification;
     private Button choose;
@@ -57,6 +56,10 @@ public class AddItemActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_item);
 
+        final Integer[] language = {getIntent().getIntExtra("lan", 0)};
+
+        final Integer[] textsize = {getIntent().getIntExtra("textSize", 16)};
+
         artistName = findViewById(R.id.artist_new_text);
         albumName = findViewById(R.id.album_new_text);
         year = findViewById(R.id.year_new_text);
@@ -64,6 +67,21 @@ public class AddItemActivity extends AppCompatActivity {
         add = findViewById(R.id.add_button);
         choose = findViewById(R.id.choose);
         notification = findViewById(R.id.notification);
+        descriptionRus = findViewById(R.id.descriptionRus_new_text);
+        if (language[0] == 0){
+
+        }else{
+            artistName.setHint("Имя исполнителя");
+            albumName.setHint("Название альбома");
+            year.setHint("Год");
+            description.setHint("Описание");
+            descriptionRus.setHint("Русское описание");
+            add.setText("Создать");
+            choose.setText("Загрузить");
+        }
+        add.setTextSize(textsize[0].floatValue());
+        choose.setTextSize(textsize[0].floatValue());
+
         storage = FirebaseStorage.getInstance();
         storageRef = storage.getReference();
 
@@ -137,6 +155,7 @@ public class AddItemActivity extends AppCompatActivity {
          newAlbum = albumName.getText().toString();
          newYear = year.getText().toString();
          newDescription = description.getText().toString();
+         newDescriptionRus = descriptionRus.getText().toString();
 
 
         String fileName = System.currentTimeMillis()+"";
@@ -152,7 +171,7 @@ public class AddItemActivity extends AppCompatActivity {
                     public void onSuccess(Uri uri) {
                         CollectionReference albumsRef = FirebaseFirestore.getInstance().collection("albums");
                         String trailer = uri.toString();
-                        albumsRef.add(new musicItem("", newArtist, newYear, newAlbum, newDescription,trailer));
+                        albumsRef.add(new musicItem("", newArtist, newYear, newAlbum, newDescription, newDescriptionRus, trailer));
                         Toast.makeText(AddItemActivity.this, "Added", Toast.LENGTH_LONG);
                         AddItemActivity.this.finish();
                     }

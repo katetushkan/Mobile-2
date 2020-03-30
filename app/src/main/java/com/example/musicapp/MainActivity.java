@@ -3,6 +3,7 @@ package com.example.musicapp;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -42,11 +43,13 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private CollectionReference albumRef = db.collection("albums");
     private static final String TAG = "MainActivity";
+    private MenuItem settingItem;
 
 
 
-    int language = 5;
+    int language = 0;
     int textSize = 16;
+    int fontId = 1;
 
     //Variables
     private List<musicItem> exampleList = new ArrayList<>();
@@ -67,9 +70,14 @@ public class MainActivity extends AppCompatActivity {
         buttonAddNote.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, AddItemActivity.class));
+                Intent intent = new Intent(MainActivity.this, AddItemActivity.class);
+                intent.putExtra("lan", language);
+                intent.putExtra("textSize", textSize);
+                intent.putExtra("fontId", fontId);
+                startActivity(intent);
             }
         });
+
 
     }
 
@@ -101,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
     private void initRecyclerview(){
         Log.d(TAG, "initRecyclerview: init recuclerview");
         RecyclerView recyclerView = findViewById(R.id.recyclerv_view);
-        adapter = new RecyclerViewAdapter( this, exampleList);
+        adapter = new RecyclerViewAdapter( this, exampleList, textSize, language, fontId);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
@@ -112,6 +120,7 @@ public class MainActivity extends AppCompatActivity {
         inflater.inflate(R.menu.example_menu, menu);
 
         MenuItem searchItem = menu.findItem(R.id.action_search);
+        settingItem = menu.findItem(R.id.action_settings);
 
         SearchView searchView = (SearchView) searchItem.getActionView();
 
@@ -134,12 +143,14 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
         switch (item.getItemId()) {
             case R.id.action_settings:
                 Intent intent = new Intent(this, SettingsActivity.class);
                 intent.putExtra("lan", language);
-                intent.putExtra("text", textSize);
-                startActivity(intent);
+                intent.putExtra("textSize", textSize);
+                intent.putExtra("fontId", fontId);
+                startActivityForResult(intent, 2);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -150,23 +161,23 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
         if (data != null) {
+            textSize = data.getIntExtra("textSize", 16);
             language = data.getIntExtra("lan", 0);
-            textSize = data.getIntExtra("text", 16);
-
-        }
-        if (language == 1){
-            MenuItem set = findViewById(R.id.action_settings);
-            set.setTitle("настройки");
+            fontId = data.getIntExtra("fontId", 800001);
         }
 
-        // text size
+
+        if(language == 0){
+            settingItem.setTitle("Settings");
+
+        }
+        else{
+            settingItem.setTitle("Настройки");
+        }
 
     }
 }

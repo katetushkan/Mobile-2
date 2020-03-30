@@ -11,7 +11,11 @@ public class musicItem {
     private String albumName;
     private String description;
     private String documentId;
+    private String descriptionRus;
 
+    public String getDescriptionRus() {
+        return descriptionRus;
+    }
 
     public String getImageUrl() {
         return imageUrl;
@@ -39,12 +43,13 @@ public class musicItem {
 
     }
 
-    public musicItem(String imageUrl, String artistName, String year, String albumName, String description, String trailer) {
+    public musicItem(String imageUrl, String artistName, String year, String albumName, String description, String descriptionRus, String trailer) {
         this.imageUrl = imageUrl;
         this.artistName = artistName;
         this.year = year;
         this.trailer = trailer;
         this.description = description;
+        this.descriptionRus = descriptionRus;
         this.albumName = albumName;
     }
 

@@ -75,7 +75,21 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
 
-        app:layout_constraintVertical_bias="0.611" />
+        app:layout_constraintVertical_bias="0.666" />
+
+    <EditText
+        android:id="@+id/descriptionRus_new_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Description Russian"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.463" />
 
     <Button
         android:id="@+id/choose"
@@ -84,24 +98,24 @@
         android:layout_marginTop="20dp"
         android:text="@string/choose_video"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.003"
+        app:layout_constraintHorizontal_bias="0.014"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
 
-        app:layout_constraintVertical_bias="0.51" />
+        app:layout_constraintVertical_bias="0.616" />
 
     <TextView
+        android:id="@+id/notification"
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:text="@string/ch_video"
         android:layout_margin="10dp"
-        android:id="@+id/notification"
+        android:text="@string/ch_video"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.937"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.45" />
+        app:layout_constraintVertical_bias="0.54" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
