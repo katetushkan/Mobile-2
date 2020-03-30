@@ -5,11 +5,13 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.core.content.res.ResourcesCompat;
 
 import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -50,6 +52,8 @@ public class AddItemActivity extends AppCompatActivity {
     private Button choose;
     private FirebaseStorage storage;
     private StorageReference storageRef;
+    private Integer fontId;
+    private Typeface typeface;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +64,9 @@ public class AddItemActivity extends AppCompatActivity {
 
         final Integer[] textsize = {getIntent().getIntExtra("textSize", 16)};
 
+        fontId = getIntent().getIntExtra("fontId", 0);
+        typeface = ResourcesCompat.getFont(this, fontId);
+
         artistName = findViewById(R.id.artist_new_text);
         albumName = findViewById(R.id.album_new_text);
         year = findViewById(R.id.year_new_text);
@@ -68,6 +75,13 @@ public class AddItemActivity extends AppCompatActivity {
         choose = findViewById(R.id.choose);
         notification = findViewById(R.id.notification);
         descriptionRus = findViewById(R.id.descriptionRus_new_text);
+
+        artistName.setTypeface(typeface);
+        albumName.setTypeface(typeface);
+        year.setTypeface(typeface);
+        description.setTypeface(typeface);
+        descriptionRus.setTypeface(typeface);
+
         if (language[0] == 0){
 
         }else{
@@ -81,6 +95,9 @@ public class AddItemActivity extends AppCompatActivity {
         }
         add.setTextSize(textsize[0].floatValue());
         choose.setTextSize(textsize[0].floatValue());
+
+        add.setTypeface(typeface);
+        choose.setTypeface(typeface);
 
         storage = FirebaseStorage.getInstance();
         storageRef = storage.getReference();

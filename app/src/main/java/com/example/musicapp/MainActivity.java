@@ -44,12 +44,13 @@ public class MainActivity extends AppCompatActivity {
     private CollectionReference albumRef = db.collection("albums");
     private static final String TAG = "MainActivity";
     private MenuItem settingItem;
+    private Typeface typeface;
 
 
 
     int language = 0;
     int textSize = 16;
-    int fontId = 1;
+    int fontId = 2131296257;
 
     //Variables
     private List<musicItem> exampleList = new ArrayList<>();
@@ -67,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
         initImageBitmaps();
         FloatingActionButton buttonAddNote = findViewById(R.id.button_add_item);
+        typeface = ResourcesCompat.getFont(this, fontId);
         buttonAddNote.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -109,7 +111,8 @@ public class MainActivity extends AppCompatActivity {
     private void initRecyclerview(){
         Log.d(TAG, "initRecyclerview: init recuclerview");
         RecyclerView recyclerView = findViewById(R.id.recyclerv_view);
-        adapter = new RecyclerViewAdapter( this, exampleList, textSize, language, fontId);
+
+        adapter = new RecyclerViewAdapter( this, exampleList, textSize, language, fontId, typeface);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
@@ -167,7 +170,7 @@ public class MainActivity extends AppCompatActivity {
         if (data != null) {
             textSize = data.getIntExtra("textSize", 16);
             language = data.getIntExtra("lan", 0);
-            fontId = data.getIntExtra("fontId", 800001);
+            fontId = data.getIntExtra("fontId", 0);
         }
 
 

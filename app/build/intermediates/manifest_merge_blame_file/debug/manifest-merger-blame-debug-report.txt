@@ -1,0 +1,212 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.musicapp"
+4    android:installLocation="preferExternal"
+5    android:versionCode="1"
+6    android:versionName="1.0" >
+7
+8    <uses-sdk
+9        android:minSdkVersion="18"
+9-->/Users/katerinatushinskaya/Desktop/1untitled/Lab2/app/src/main/AndroidManifest.xml
+10        android:targetSdkVersion="29" />
+10-->/Users/katerinatushinskaya/Desktop/1untitled/Lab2/app/src/main/AndroidManifest.xml
+11
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->/Users/katerinatushinskaya/Desktop/1untitled/Lab2/app/src/main/AndroidManifest.xml:6:5-67
+12-->/Users/katerinatushinskaya/Desktop/1untitled/Lab2/app/src/main/AndroidManifest.xml:6:22-64
+13    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+13-->/Users/katerinatushinskaya/Desktop/1untitled/Lab2/app/src/main/AndroidManifest.xml:7:5-81
+13-->/Users/katerinatushinskaya/Desktop/1untitled/Lab2/app/src/main/AndroidManifest.xml:7:22-78
+14    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+14-->/Users/katerinatushinskaya/Desktop/1untitled/Lab2/app/src/main/AndroidManifest.xml:8:5-79
+14-->/Users/katerinatushinskaya/Desktop/1untitled/Lab2/app/src/main/AndroidManifest.xml:8:22-76
+15    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+15-->/Users/katerinatushinskaya/Desktop/1untitled/Lab2/app/src/main/AndroidManifest.xml:9:5-76
+15-->/Users/katerinatushinskaya/Desktop/1untitled/Lab2/app/src/main/AndroidManifest.xml:9:22-73
+16    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+16-->[com.google.android.gms:play-services-measurement-api:17.2.3] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/3838fa066decd5d47eec7bd5d4f2a46d/jetified-play-services-measurement-api-17.2.3/AndroidManifest.xml:24:5-68
+16-->[com.google.android.gms:play-services-measurement-api:17.2.3] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/3838fa066decd5d47eec7bd5d4f2a46d/jetified-play-services-measurement-api-17.2.3/AndroidManifest.xml:24:22-65
+17    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+17-->[com.google.firebase:firebase-iid:20.0.2] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/0dbca7ef2e7fe6dd6ad20b90edf9f9bc/jetified-firebase-iid-20.0.2/AndroidManifest.xml:26:5-82
+17-->[com.google.firebase:firebase-iid:20.0.2] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/0dbca7ef2e7fe6dd6ad20b90edf9f9bc/jetified-firebase-iid-20.0.2/AndroidManifest.xml:26:22-79
+18    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+18-->[com.google.android.gms:play-services-measurement:17.2.3] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/493b977d77656374211b333eaefc270a/jetified-play-services-measurement-17.2.3/AndroidManifest.xml:26:5-110
+18-->[com.google.android.gms:play-services-measurement:17.2.3] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/493b977d77656374211b333eaefc270a/jetified-play-services-measurement-17.2.3/AndroidManifest.xml:26:22-107
+19
+20    <application
+20-->/Users/katerinatushinskaya/Desktop/1untitled/Lab2/app/src/main/AndroidManifest.xml:11:5-33:19
+21        android:name="androidx.multidex.MultiDexApplication"
+22        android:allowBackup="true"
+22-->/Users/katerinatushinskaya/Desktop/1untitled/Lab2/app/src/main/AndroidManifest.xml:12:9-35
+23        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+23-->[androidx.core:core:1.1.0] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/f961a727fd6ff1bec6d760c391cc6822/core-1.1.0/AndroidManifest.xml:24:18-86
+24        android:debuggable="true"
+25        android:icon="@mipmap/ic_launcher"
+25-->/Users/katerinatushinskaya/Desktop/1untitled/Lab2/app/src/main/AndroidManifest.xml:13:9-43
+26        android:label="@string/app_name"
+26-->/Users/katerinatushinskaya/Desktop/1untitled/Lab2/app/src/main/AndroidManifest.xml:14:9-41
+27        android:roundIcon="@mipmap/ic_launcher_round"
+27-->/Users/katerinatushinskaya/Desktop/1untitled/Lab2/app/src/main/AndroidManifest.xml:15:9-54
+28        android:supportsRtl="true"
+28-->/Users/katerinatushinskaya/Desktop/1untitled/Lab2/app/src/main/AndroidManifest.xml:16:9-35
+29        android:testOnly="true"
+30        android:theme="@style/AppTheme" >
+30-->/Users/katerinatushinskaya/Desktop/1untitled/Lab2/app/src/main/AndroidManifest.xml:17:9-40
+31        <activity android:name="com.example.musicapp.AddItemActivity" />
+31-->/Users/katerinatushinskaya/Desktop/1untitled/Lab2/app/src/main/AndroidManifest.xml:18:9-62
+31-->/Users/katerinatushinskaya/Desktop/1untitled/Lab2/app/src/main/AndroidManifest.xml:18:19-50
+32        <activity android:name="com.example.musicapp.SettingsActivity" />
+32-->/Users/katerinatushinskaya/Desktop/1untitled/Lab2/app/src/main/AndroidManifest.xml:19:9-54
+32-->/Users/katerinatushinskaya/Desktop/1untitled/Lab2/app/src/main/AndroidManifest.xml:19:19-51
+33        <activity
+33-->/Users/katerinatushinskaya/Desktop/1untitled/Lab2/app/src/main/AndroidManifest.xml:20:9-28:20
+34            android:name="com.example.musicapp.SplashScreen"
+34-->/Users/katerinatushinskaya/Desktop/1untitled/Lab2/app/src/main/AndroidManifest.xml:21:13-41
+35            android:theme="@style/SplashScreen" >
+35-->/Users/katerinatushinskaya/Desktop/1untitled/Lab2/app/src/main/AndroidManifest.xml:22:13-48
+36            <intent-filter>
+36-->/Users/katerinatushinskaya/Desktop/1untitled/Lab2/app/src/main/AndroidManifest.xml:23:13-27:29
+37                <action android:name="android.intent.action.MAIN" />
+37-->/Users/katerinatushinskaya/Desktop/1untitled/Lab2/app/src/main/AndroidManifest.xml:24:17-69
+37-->/Users/katerinatushinskaya/Desktop/1untitled/Lab2/app/src/main/AndroidManifest.xml:24:25-66
+38
+39                <category android:name="android.intent.category.LAUNCHER" />
+39-->/Users/katerinatushinskaya/Desktop/1untitled/Lab2/app/src/main/AndroidManifest.xml:26:17-77
+39-->/Users/katerinatushinskaya/Desktop/1untitled/Lab2/app/src/main/AndroidManifest.xml:26:27-74
+40            </intent-filter>
+41        </activity>
+42        <activity
+42-->/Users/katerinatushinskaya/Desktop/1untitled/Lab2/app/src/main/AndroidManifest.xml:29:9-31:47
+43            android:name="com.example.musicapp.MainActivity"
+43-->/Users/katerinatushinskaya/Desktop/1untitled/Lab2/app/src/main/AndroidManifest.xml:30:13-41
+44            android:theme="@style/AppTheme" />
+44-->/Users/katerinatushinskaya/Desktop/1untitled/Lab2/app/src/main/AndroidManifest.xml:31:13-44
+45        <activity android:name="com.example.musicapp.IndividualActivity" />
+45-->/Users/katerinatushinskaya/Desktop/1untitled/Lab2/app/src/main/AndroidManifest.xml:32:9-56
+45-->/Users/katerinatushinskaya/Desktop/1untitled/Lab2/app/src/main/AndroidManifest.xml:32:19-53
+46
+47        <service
+47-->[com.google.firebase:firebase-firestore:21.4.1] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/13154fab687b288ed9aef6894a4a20b6/jetified-firebase-firestore-21.4.1/AndroidManifest.xml:17:9-23:19
+48            android:name="com.google.firebase.components.ComponentDiscoveryService"
+48-->[com.google.firebase:firebase-firestore:21.4.1] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/13154fab687b288ed9aef6894a4a20b6/jetified-firebase-firestore-21.4.1/AndroidManifest.xml:18:13-84
+49            android:directBootAware="true"
+49-->[com.google.firebase:firebase-common:19.3.0] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/1b23a58bb1c539c2a19df1b0920c32b5/jetified-firebase-common-19.3.0/AndroidManifest.xml:34:13-43
+50            android:exported="false" >
+50-->[com.google.firebase:firebase-firestore:21.4.1] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/13154fab687b288ed9aef6894a4a20b6/jetified-firebase-firestore-21.4.1/AndroidManifest.xml:19:13-37
+51            <meta-data
+51-->[com.google.firebase:firebase-firestore:21.4.1] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/13154fab687b288ed9aef6894a4a20b6/jetified-firebase-firestore-21.4.1/AndroidManifest.xml:20:13-22:85
+52                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+52-->[com.google.firebase:firebase-firestore:21.4.1] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/13154fab687b288ed9aef6894a4a20b6/jetified-firebase-firestore-21.4.1/AndroidManifest.xml:21:17-111
+53                android:value="com.google.firebase.components.ComponentRegistrar" />
+53-->[com.google.firebase:firebase-firestore:21.4.1] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/13154fab687b288ed9aef6894a4a20b6/jetified-firebase-firestore-21.4.1/AndroidManifest.xml:22:17-82
+54            <meta-data
+54-->[com.google.firebase:firebase-storage:19.1.1] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/8ad4e1ffea3e5c78db0912db37bdac9c/jetified-firebase-storage-19.1.1/AndroidManifest.xml:33:13-35:85
+55                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+55-->[com.google.firebase:firebase-storage:19.1.1] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/8ad4e1ffea3e5c78db0912db37bdac9c/jetified-firebase-storage-19.1.1/AndroidManifest.xml:34:17-107
+56                android:value="com.google.firebase.components.ComponentRegistrar" />
+56-->[com.google.firebase:firebase-storage:19.1.1] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/8ad4e1ffea3e5c78db0912db37bdac9c/jetified-firebase-storage-19.1.1/AndroidManifest.xml:35:17-82
+57            <meta-data
+57-->[com.google.android.gms:play-services-measurement-api:17.2.3] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/3838fa066decd5d47eec7bd5d4f2a46d/jetified-play-services-measurement-api-17.2.3/AndroidManifest.xml:30:13-32:85
+58                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+58-->[com.google.android.gms:play-services-measurement-api:17.2.3] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/3838fa066decd5d47eec7bd5d4f2a46d/jetified-play-services-measurement-api-17.2.3/AndroidManifest.xml:31:17-139
+59                android:value="com.google.firebase.components.ComponentRegistrar" />
+59-->[com.google.android.gms:play-services-measurement-api:17.2.3] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/3838fa066decd5d47eec7bd5d4f2a46d/jetified-play-services-measurement-api-17.2.3/AndroidManifest.xml:32:17-82
+60            <meta-data
+60-->[com.google.firebase:firebase-iid:20.0.2] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/0dbca7ef2e7fe6dd6ad20b90edf9f9bc/jetified-firebase-iid-20.0.2/AndroidManifest.xml:32:13-34:85
+61                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+61-->[com.google.firebase:firebase-iid:20.0.2] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/0dbca7ef2e7fe6dd6ad20b90edf9f9bc/jetified-firebase-iid-20.0.2/AndroidManifest.xml:33:17-96
+62                android:value="com.google.firebase.components.ComponentRegistrar" />
+62-->[com.google.firebase:firebase-iid:20.0.2] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/0dbca7ef2e7fe6dd6ad20b90edf9f9bc/jetified-firebase-iid-20.0.2/AndroidManifest.xml:34:17-82
+63        </service>
+64
+65        <receiver
+65-->[com.google.firebase:firebase-iid:20.0.2] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/0dbca7ef2e7fe6dd6ad20b90edf9f9bc/jetified-firebase-iid-20.0.2/AndroidManifest.xml:37:9-44:20
+66            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+66-->[com.google.firebase:firebase-iid:20.0.2] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/0dbca7ef2e7fe6dd6ad20b90edf9f9bc/jetified-firebase-iid-20.0.2/AndroidManifest.xml:38:13-78
+67            android:exported="true"
+67-->[com.google.firebase:firebase-iid:20.0.2] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/0dbca7ef2e7fe6dd6ad20b90edf9f9bc/jetified-firebase-iid-20.0.2/AndroidManifest.xml:39:13-36
+68            android:permission="com.google.android.c2dm.permission.SEND" >
+68-->[com.google.firebase:firebase-iid:20.0.2] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/0dbca7ef2e7fe6dd6ad20b90edf9f9bc/jetified-firebase-iid-20.0.2/AndroidManifest.xml:40:13-73
+69            <intent-filter>
+69-->[com.google.firebase:firebase-iid:20.0.2] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/0dbca7ef2e7fe6dd6ad20b90edf9f9bc/jetified-firebase-iid-20.0.2/AndroidManifest.xml:41:13-43:29
+70                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+70-->[com.google.firebase:firebase-iid:20.0.2] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/0dbca7ef2e7fe6dd6ad20b90edf9f9bc/jetified-firebase-iid-20.0.2/AndroidManifest.xml:42:17-81
+70-->[com.google.firebase:firebase-iid:20.0.2] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/0dbca7ef2e7fe6dd6ad20b90edf9f9bc/jetified-firebase-iid-20.0.2/AndroidManifest.xml:42:25-78
+71            </intent-filter>
+72        </receiver>
+73
+74        <activity
+74-->[com.google.android.gms:play-services-base:17.0.0] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/38b6c4b545e39be84f8fef63d737cf6b/jetified-play-services-base-17.0.0/AndroidManifest.xml:23:9-26:75
+75            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+75-->[com.google.android.gms:play-services-base:17.0.0] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/38b6c4b545e39be84f8fef63d737cf6b/jetified-play-services-base-17.0.0/AndroidManifest.xml:24:13-79
+76            android:exported="false"
+76-->[com.google.android.gms:play-services-base:17.0.0] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/38b6c4b545e39be84f8fef63d737cf6b/jetified-play-services-base-17.0.0/AndroidManifest.xml:25:13-37
+77            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+77-->[com.google.android.gms:play-services-base:17.0.0] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/38b6c4b545e39be84f8fef63d737cf6b/jetified-play-services-base-17.0.0/AndroidManifest.xml:26:13-72
+78
+79        <provider
+79-->[com.google.firebase:firebase-common:19.3.0] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/1b23a58bb1c539c2a19df1b0920c32b5/jetified-firebase-common-19.3.0/AndroidManifest.xml:26:9-30:39
+80            android:name="com.google.firebase.provider.FirebaseInitProvider"
+80-->[com.google.firebase:firebase-common:19.3.0] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/1b23a58bb1c539c2a19df1b0920c32b5/jetified-firebase-common-19.3.0/AndroidManifest.xml:27:13-77
+81            android:authorities="com.example.musicapp.firebaseinitprovider"
+81-->[com.google.firebase:firebase-common:19.3.0] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/1b23a58bb1c539c2a19df1b0920c32b5/jetified-firebase-common-19.3.0/AndroidManifest.xml:28:13-72
+82            android:exported="false"
+82-->[com.google.firebase:firebase-common:19.3.0] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/1b23a58bb1c539c2a19df1b0920c32b5/jetified-firebase-common-19.3.0/AndroidManifest.xml:29:13-37
+83            android:initOrder="100" />
+83-->[com.google.firebase:firebase-common:19.3.0] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/1b23a58bb1c539c2a19df1b0920c32b5/jetified-firebase-common-19.3.0/AndroidManifest.xml:30:13-36
+84
+85        <receiver
+85-->[com.google.android.gms:play-services-measurement:17.2.3] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/493b977d77656374211b333eaefc270a/jetified-play-services-measurement-17.2.3/AndroidManifest.xml:29:9-33:20
+86            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+86-->[com.google.android.gms:play-services-measurement:17.2.3] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/493b977d77656374211b333eaefc270a/jetified-play-services-measurement-17.2.3/AndroidManifest.xml:30:13-85
+87            android:enabled="true"
+87-->[com.google.android.gms:play-services-measurement:17.2.3] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/493b977d77656374211b333eaefc270a/jetified-play-services-measurement-17.2.3/AndroidManifest.xml:31:13-35
+88            android:exported="false" >
+88-->[com.google.android.gms:play-services-measurement:17.2.3] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/493b977d77656374211b333eaefc270a/jetified-play-services-measurement-17.2.3/AndroidManifest.xml:32:13-37
+89        </receiver>
+90        <receiver
+90-->[com.google.android.gms:play-services-measurement:17.2.3] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/493b977d77656374211b333eaefc270a/jetified-play-services-measurement-17.2.3/AndroidManifest.xml:34:9-42:20
+91            android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver"
+91-->[com.google.android.gms:play-services-measurement:17.2.3] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/493b977d77656374211b333eaefc270a/jetified-play-services-measurement-17.2.3/AndroidManifest.xml:35:13-100
+92            android:enabled="true"
+92-->[com.google.android.gms:play-services-measurement:17.2.3] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/493b977d77656374211b333eaefc270a/jetified-play-services-measurement-17.2.3/AndroidManifest.xml:36:13-35
+93            android:exported="true"
+93-->[com.google.android.gms:play-services-measurement:17.2.3] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/493b977d77656374211b333eaefc270a/jetified-play-services-measurement-17.2.3/AndroidManifest.xml:37:13-36
+94            android:permission="android.permission.INSTALL_PACKAGES" >
+94-->[com.google.android.gms:play-services-measurement:17.2.3] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/493b977d77656374211b333eaefc270a/jetified-play-services-measurement-17.2.3/AndroidManifest.xml:38:13-69
+95            <intent-filter>
+95-->[com.google.android.gms:play-services-measurement:17.2.3] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/493b977d77656374211b333eaefc270a/jetified-play-services-measurement-17.2.3/AndroidManifest.xml:39:13-41:29
+96                <action android:name="com.android.vending.INSTALL_REFERRER" />
+96-->[com.google.android.gms:play-services-measurement:17.2.3] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/493b977d77656374211b333eaefc270a/jetified-play-services-measurement-17.2.3/AndroidManifest.xml:40:17-79
+96-->[com.google.android.gms:play-services-measurement:17.2.3] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/493b977d77656374211b333eaefc270a/jetified-play-services-measurement-17.2.3/AndroidManifest.xml:40:25-76
+97            </intent-filter>
+98        </receiver>
+99
+100        <service
+100-->[com.google.android.gms:play-services-measurement:17.2.3] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/493b977d77656374211b333eaefc270a/jetified-play-services-measurement-17.2.3/AndroidManifest.xml:44:9-47:40
+101            android:name="com.google.android.gms.measurement.AppMeasurementService"
+101-->[com.google.android.gms:play-services-measurement:17.2.3] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/493b977d77656374211b333eaefc270a/jetified-play-services-measurement-17.2.3/AndroidManifest.xml:45:13-84
+102            android:enabled="true"
+102-->[com.google.android.gms:play-services-measurement:17.2.3] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/493b977d77656374211b333eaefc270a/jetified-play-services-measurement-17.2.3/AndroidManifest.xml:46:13-35
+103            android:exported="false" />
+103-->[com.google.android.gms:play-services-measurement:17.2.3] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/493b977d77656374211b333eaefc270a/jetified-play-services-measurement-17.2.3/AndroidManifest.xml:47:13-37
+104        <service
+104-->[com.google.android.gms:play-services-measurement:17.2.3] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/493b977d77656374211b333eaefc270a/jetified-play-services-measurement-17.2.3/AndroidManifest.xml:48:9-52:72
+105            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+105-->[com.google.android.gms:play-services-measurement:17.2.3] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/493b977d77656374211b333eaefc270a/jetified-play-services-measurement-17.2.3/AndroidManifest.xml:49:13-87
+106            android:enabled="true"
+106-->[com.google.android.gms:play-services-measurement:17.2.3] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/493b977d77656374211b333eaefc270a/jetified-play-services-measurement-17.2.3/AndroidManifest.xml:50:13-35
+107            android:exported="false"
+107-->[com.google.android.gms:play-services-measurement:17.2.3] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/493b977d77656374211b333eaefc270a/jetified-play-services-measurement-17.2.3/AndroidManifest.xml:51:13-37
+108            android:permission="android.permission.BIND_JOB_SERVICE" />
+108-->[com.google.android.gms:play-services-measurement:17.2.3] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/493b977d77656374211b333eaefc270a/jetified-play-services-measurement-17.2.3/AndroidManifest.xml:52:13-69
+109
+110        <meta-data
+110-->[com.google.android.gms:play-services-basement:17.0.0] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/f720b24cc490c109d50c0a0a1e6bf186/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
+111            android:name="com.google.android.gms.version"
+111-->[com.google.android.gms:play-services-basement:17.0.0] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/f720b24cc490c109d50c0a0a1e6bf186/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
+112            android:value="@integer/google_play_services_version" />
+112-->[com.google.android.gms:play-services-basement:17.0.0] /Users/katerinatushinskaya/.gradle/caches/transforms-2/files-2.1/f720b24cc490c109d50c0a0a1e6bf186/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
+113    </application>
+114
+115</manifest>

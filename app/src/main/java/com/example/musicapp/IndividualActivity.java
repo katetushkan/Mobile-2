@@ -57,7 +57,7 @@ public class IndividualActivity extends AppCompatActivity {
             language = getIntent().getIntExtra("lan", 0);
             fontId = getIntent().getIntExtra("fontId", 1);
 
-
+            typeface = ResourcesCompat.getFont(this, fontId);
 
             setImage(imageUrl, albumName, artistName, year, descrip, trailer);
         }
@@ -73,18 +73,22 @@ public class IndividualActivity extends AppCompatActivity {
         TextView name = findViewById(R.id.albumNameIndivid);
         name.setText(imageName);
         name.setTextSize(textSize.floatValue());
+        name.setTypeface(typeface);
 
         TextView artist = findViewById(R.id.artistNameIndivid);
         artist.setText(artistName);
         artist.setTextSize(textSize.floatValue());
+        artist.setTypeface(typeface);
 
         TextView yearText = findViewById(R.id.yearIndivid);
         yearText.setText(year);
         yearText.setTextSize(textSize.floatValue());
+        yearText.setTypeface(typeface);
 
         TextView description = findViewById(R.id.image_description);
         description.setText(descrip);
         description.setTextSize(textSize.floatValue());
+        description.setTypeface(typeface);
 
         ImageView image = findViewById(R.id.image);
         Glide.with(this)

@@ -12,6 +12,7 @@
     <string name="ch_video">No file selected</string>
     <string-array name="fonts">
         <item>boomboom</item>
+        <item>normal</item>
         <item>beer_money</item>
         <item>gnyrwn</item>
         <item>christmas_script</item>

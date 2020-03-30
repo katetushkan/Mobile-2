@@ -31,14 +31,16 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private List<musicItem> exampleListFull;
     private Context mContext;
     private Integer textSize, language, fontId;
+    private Typeface typeface;
 
-    public RecyclerViewAdapter(Context Context, List<musicItem> ExampleList, Integer textSize, Integer language, Integer fontId) {
+    public RecyclerViewAdapter(Context Context, List<musicItem> ExampleList, Integer textSize, Integer language, Integer fontId, Typeface typeface) {
         this.mExampleList = ExampleList;
         exampleListFull = new ArrayList<>(mExampleList);
         this.mContext = Context;
         this.textSize = textSize;
         this.language = language;
         this.fontId = fontId;
+        this.typeface = typeface;
     }
 
     @NonNull
@@ -98,13 +100,19 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             image = itemView.findViewById(R.id.image);
-            albumName = itemView.findViewById(R.id.albumsName);
 
+            albumName = itemView.findViewById(R.id.albumsName);
             albumName.setTextSize(textSize.floatValue());
+            albumName.setTypeface(typeface);
+
             year = itemView.findViewById(R.id.year);
             year.setTextSize(textSize.floatValue());
+            year.setTypeface(typeface);
+
             artistName = itemView.findViewById(R.id.artistName);
             artistName.setTextSize(textSize.floatValue());
+            artistName.setTypeface(typeface);
+
             parentLayout = itemView.findViewById(R.id.parent_layout);
 
         }
