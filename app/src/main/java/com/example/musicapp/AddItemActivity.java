@@ -42,6 +42,7 @@ public class AddItemActivity extends AppCompatActivity {
     private EditText descriptionRus;
     private Button add;
     Uri videoUri;
+    Uri imageUri;
     private String newArtist;
     private String newAlbum;
     private String newYear ;
@@ -50,10 +51,14 @@ public class AddItemActivity extends AppCompatActivity {
     private ProgressDialog progressDialog;
     private TextView notification;
     private Button choose;
+    private Button chooseImg;
     private FirebaseStorage storage;
     private StorageReference storageRef;
     private Integer fontId;
     private Typeface typeface;
+    private Boolean check;
+    private CollectionReference albumsRef;
+    private String trailer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +78,7 @@ public class AddItemActivity extends AppCompatActivity {
         description = findViewById(R.id.description_new_text);
         add = findViewById(R.id.add_button);
         choose = findViewById(R.id.choose);
+        chooseImg = findViewById(R.id.choose_image);
         notification = findViewById(R.id.notification);
         descriptionRus = findViewById(R.id.descriptionRus_new_text);
 
@@ -92,12 +98,15 @@ public class AddItemActivity extends AppCompatActivity {
             descriptionRus.setHint("Русское описание");
             add.setText("Создать");
             choose.setText("Загрузить");
+            chooseImg.setText("фото...");
         }
         add.setTextSize(textsize[0].floatValue());
         choose.setTextSize(textsize[0].floatValue());
+        chooseImg.setTextSize(textsize[0].floatValue());
 
         add.setTypeface(typeface);
         choose.setTypeface(typeface);
+        chooseImg.setTypeface(typeface);
 
         storage = FirebaseStorage.getInstance();
         storageRef = storage.getReference();
@@ -107,6 +116,19 @@ public class AddItemActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(ContextCompat.checkSelfPermission(AddItemActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED){
                     selectVideo();
+                    check = true;
+                }
+                else
+                    ActivityCompat.requestPermissions(AddItemActivity.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 9);
+            }
+        });
+
+        chooseImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(ContextCompat.checkSelfPermission(AddItemActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED){
+                    selectImage();
+                    check = false;
                 }
                 else
                     ActivityCompat.requestPermissions(AddItemActivity.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 9);
@@ -117,8 +139,8 @@ public class AddItemActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (videoUri != null){
-                    saveItem(videoUri);
+                if (videoUri != null || imageUri != null){
+                    saveItem(videoUri, imageUri);
                 }
                 else
                     Toast.makeText(AddItemActivity.this, "Please6 select a file", Toast.LENGTH_SHORT).show();
@@ -132,8 +154,11 @@ public class AddItemActivity extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
 
         if(requestCode == 9 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
-
-            selectVideo();
+            if(check){
+                selectVideo();
+            }else{
+                selectImage();
+            }
         }
         else
             Toast.makeText(AddItemActivity.this, "check permission", Toast.LENGTH_LONG).show();
@@ -148,18 +173,30 @@ public class AddItemActivity extends AppCompatActivity {
 
     }
 
+    private void selectImage(){
+
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(intent, 86);
+
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
 
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 86 && resultCode == RESULT_OK && data != null) {
-            videoUri = data.getData();
-            notification.setText("A file is selected: " + data.getData().getLastPathSegment() );
+            if (check){
+                videoUri = data.getData();
+                notification.setText("A file is selected: " + data.getData().getLastPathSegment() );
+            }
+            imageUri = data.getData();
         } else
             Toast.makeText(AddItemActivity.this, "can't find file", Toast.LENGTH_SHORT).show();
     }
 
-    private void saveItem(Uri videoUri){
+    private void saveItem(Uri videoUri, final Uri imageUri){
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
@@ -176,21 +213,35 @@ public class AddItemActivity extends AppCompatActivity {
 
 
         String fileName = System.currentTimeMillis()+"";
+        final String fileNameImg = System.currentTimeMillis()+"";
 
 
         // returns root path
         storageRef.child("video/").child(fileName).putFile(videoUri)
                 .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
-            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+            public void onSuccess(final UploadTask.TaskSnapshot taskSnapshot) {
                 taskSnapshot.getMetadata().getReference().getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                     @Override
                     public void onSuccess(Uri uri) {
-                        CollectionReference albumsRef = FirebaseFirestore.getInstance().collection("albums");
-                        String trailer = uri.toString();
-                        albumsRef.add(new musicItem("", newArtist, newYear, newAlbum, newDescription, newDescriptionRus, trailer));
-                        Toast.makeText(AddItemActivity.this, "Added", Toast.LENGTH_LONG);
-                        AddItemActivity.this.finish();
+                        albumsRef = FirebaseFirestore.getInstance().collection("albums");
+                        trailer = uri.toString();
+                        storageRef.child("images").child(fileNameImg).putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                            @Override
+                            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                                taskSnapshot.getMetadata().getReference().getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                    @Override
+                                    public void onSuccess(Uri uri) {
+                                        String image = uri.toString();
+                                        albumsRef.add(new musicItem(image, newArtist, newYear, newAlbum, newDescription, newDescriptionRus, trailer));
+                                        Toast.makeText(AddItemActivity.this, "Added", Toast.LENGTH_LONG);
+                                        AddItemActivity.this.finish();
+                                    }
+                                });
+                            }
+                        });
+
+
                     }
                 });
 

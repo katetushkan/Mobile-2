@@ -1213,6 +1213,7 @@ id chains
 id checkbox
 id checked
 id choose
+id choose_image
 id chronometer
 id clip_horizontal
 id clip_vertical
